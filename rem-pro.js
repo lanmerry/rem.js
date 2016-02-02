@@ -1,11 +1,14 @@
+// 传入 window 对象，减少向上查找，也利于压缩
 (function(win) {
     var rem = function(rootSize, desWid) {
+        // 内置尺寸列表
         var sizeList = {
             640: 1136,
             750: 1334,
             1080: 1920
         };
 
+        // 设置 rem
         var setRem = function(rootSize, desWid) {
             var rootEl = win.document.documentElement,
                 cliSize = rootEl.getBoundingClientRect(),
@@ -21,25 +24,28 @@
             rootEl.style.fontSize = rem + 'px';
         };
 
+        // 延迟设置 rem
         var tid,
-            refreshRem = setRem.bind(this, rootSize, desWid),
-            _setRem = function() {
-                clearTimeout(tid);
-                tid = setTimeout(refreshRem, 300);
+            _setRem = setRem.bind(null, rootSize, desWid),
+            refreshRem = function() {
+                win.clearTimeout(tid);
+                tid = win.setTimeout(_setRem, 300);
             };
 
         setRem(rootSize, desWid);
 
+        // 监听重设
         win.addEventListener('resize', function() {
-            _setRem();
+            refreshRem();
         });
 
         win.addEventListener('pageshow', function(e) {
             if (e.persisted) {
-                _setRem();
-            }
+                refreshRem();
+            };
         });
     };
 
+    // 暴露全局变量
     win.$rem = rem;
 }(window));

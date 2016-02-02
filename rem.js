@@ -10,7 +10,7 @@
             rem = height / (1334 / 50);
         } else {
             rem = width / (750 / 50);
-        }
+        };
 
         docEl.style.fontSize = rem + 'px';
     };
@@ -19,8 +19,8 @@
 
     var tid,
         setRem = function() {
-            clearTimeout(tid);
-            tid = setTimeout(refreshRem, 300);
+            win.clearTimeout(tid);
+            tid = win.setTimeout(refreshRem, 300);
         };
 
     win.addEventListener('resize', function() {
@@ -30,6 +30,6 @@
     win.addEventListener('pageshow', function(e) {
         if (e.persisted) {
             setRem();
-        }
+        };
     });
 }(window));
