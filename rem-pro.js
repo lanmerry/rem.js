@@ -24,7 +24,7 @@
             rootEl.style.fontSize = rem + 'px';
         };
 
-        // 延迟设置 rem
+        // 延迟重设 rem
         var tid,
             _setRem = setRem.bind(null, rootSize, desWid),
             refreshRem = function() {
@@ -32,9 +32,9 @@
                 tid = win.setTimeout(_setRem, 300);
             };
 
-        setRem(rootSize, desWid);
+        _setRem();
 
-        // 监听重设
+        // 添加事件
         win.addEventListener('resize', function() {
             refreshRem();
         });
