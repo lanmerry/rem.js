@@ -12,7 +12,7 @@
 - iPhone 6/6S: 750 * 1334
 - New Android Devices: 1080 * 1920
 
-## 使用方法
+## Usage
 
 - `rem.js` 只需要引入即可生效，但更推荐使用内联的方式。  
 
@@ -24,7 +24,12 @@ $rem(50, 750); // 参数分别是：换算标准 / 设计宽度
 
 - 一般情况下只需要使用 `rem.js`，可根据需求修改源码中的尺寸。如果多个页面的设计稿尺寸不一致时（跨部门合作或历史遗留问题），则可以引入 `rem-pro.js`。
 
-## 版权信息
+## Contributors
 
-- MIT 协议
-- 鸣谢 @lanmerry
+- `lib-flexible.js` @amfe
+- `rem.js` @lanmerry
+- `rem-pro.js` @banricho
+
+## License
+
+MIT
