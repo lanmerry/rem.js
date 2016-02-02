@@ -22,17 +22,16 @@
                 cliWid / (desWid / rootSize);
 
             rootEl.style.fontSize = rem + 'px';
-        };
+        }.bind(null, rootSize, desWid);
 
         // 延迟重设 rem
         var tid,
-            _setRem = setRem.bind(null, rootSize, desWid),
             refreshRem = function() {
                 win.clearTimeout(tid);
-                tid = win.setTimeout(_setRem, 300);
+                tid = win.setTimeout(setRem, 300);
             };
 
-        _setRem();
+        setRem();
 
         // 添加事件
         win.addEventListener('resize', function() {
