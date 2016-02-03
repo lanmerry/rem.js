@@ -9,7 +9,7 @@
     };
 
     // 计算并设置 rem
-    var setRem = function(rootSize, desWid) {
+    var setRem = function setRem() {
       var rootEl = win.document.documentElement,
         cliSize = rootEl.getBoundingClientRect(),
         cliWid = cliSize.width,
@@ -20,7 +20,7 @@
       var rem = cliWid / cliHei > desWid / desHei ? cliHei / (desHei / rootSize) : cliWid / (desWid / rootSize);
 
       rootEl.style.fontSize = rem + 'px';
-    }.bind(null, rootSize, desWid);
+    };
 
     // 延迟重设 rem
     var tid = undefined,

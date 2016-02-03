@@ -9,7 +9,7 @@
         };
 
         // 计算并设置 rem
-        let setRem = function(rootSize, desWid) {
+        let setRem = () => {
             let rootEl = win.document.documentElement,
                 cliSize = rootEl.getBoundingClientRect(),
                 cliWid = cliSize.width,
@@ -22,7 +22,7 @@
                 cliWid / (desWid / rootSize);
 
             rootEl.style.fontSize = rem + 'px';
-        }.bind(null, rootSize, desWid);
+        };
 
         // 延迟重设 rem
         let tid,
