@@ -1,0 +1,19 @@
+{
+  "name": "rem-pro.js",
+  "version": "0.0.1",
+  "description": "based on rem.js",
+  "main": "rem-pro.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/banricho/rem.js.git"
+  },
+  "author": "banricho",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/banricho/rem.js/issues"
+  },
+  "homepage": "https://github.com/banricho/rem.js#readme"
+}
