@@ -40,7 +40,6 @@
       if (e.persisted) {
         refreshRem();
       }
-      ;
     });
   };
 

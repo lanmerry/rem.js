@@ -41,7 +41,7 @@
         win.addEventListener('pageshow', (e) => {
             if (e.persisted) {
                 refreshRem();
-            };
+            }
         });
     };
 

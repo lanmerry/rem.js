@@ -11,7 +11,6 @@
     } else {
       rem = width / (750 / 50);
     }
-    ;
 
     rootEl.style.fontSize = rem + 'px';
   };
@@ -32,6 +31,5 @@
     if (e.persisted) {
       refreshRem();
     }
-    ;
   });
 })(window);

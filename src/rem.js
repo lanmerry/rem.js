@@ -10,7 +10,7 @@
             rem = height / (1334 / 50);
         } else {
             rem = width / (750 / 50);
-        };
+        }
 
         rootEl.style.fontSize = rem + 'px';
     };
@@ -30,6 +30,6 @@
     win.addEventListener('pageshow', (e) => {
         if (e.persisted) {
             refreshRem();
-        };
+        }
     });
 })(window);
